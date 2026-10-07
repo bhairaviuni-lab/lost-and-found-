@@ -1,0 +1,6 @@
+{
+  "name": "Campus Lost & Found",
+  "description": "Lost something? Found something? Help your campus reconnect. A modern full-stack lost and found platform for college students.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
