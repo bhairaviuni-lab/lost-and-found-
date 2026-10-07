@@ -542,6 +542,16 @@ app.post('/api/supabase/sync-all', async (_req: Request, res: Response) => {
   }
 });
 
+// 18. Download complete project archive (.tar.gz)
+app.get('/api/download-project', (_req: Request, res: Response) => {
+  const archivePath = path.resolve(process.cwd(), 'campus-lost-and-found.tar.gz');
+  if (fs.existsSync(archivePath)) {
+    res.download(archivePath, 'campus-lost-and-found.tar.gz');
+  } else {
+    res.status(404).send('Archive not found');
+  }
+});
+
 // Serve frontend in Dev vs Production
 async function startServer() {
   if (!isProduction) {
